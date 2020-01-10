@@ -2,8 +2,12 @@ const User = require("../models/User");
 const Post = require("../models/Post");
 const nodemailer = require("nodemailer");
 
+const host = process.env.NODE_ENV === "production" ? "noobboard.herokuapp.com/" : "locahost";
+
+console.log("host =", host);
 const transporter = nodemailer.createTransport({
   service: "gmail",
+  host: host,
   auth: {
     user: process.env.GMAIL_USERNAME,
     pass: process.env.GMAIL_PASSWORD
