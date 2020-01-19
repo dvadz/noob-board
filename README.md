@@ -4,7 +4,7 @@ A community board for posting and commenting on questions, share ideas, and help
 
 Visitors can view all posts and comments. However registration is required to be able to create new posts, to comment on other posts and to mark helpful posts as favourites.
 
-Registered users can see a list of all their original posts and favourites. Email notifications are sent out when someone comments on their posts.
+Registered users can see a list of all their original posts and favourites.
 
 Trello was used for project planning.
 
@@ -25,7 +25,6 @@ Back-end
 - Passport-Local
 - Bcrypt
 - DotEnv
-- Nodemailer
 - Morgan
 - Helmet
 
@@ -40,4 +39,4 @@ Others
 - Git
 - Trello
 
-Link: https://noob-board.herokuapp.com/
+Link: https://noobboard.herokuapp.com/
