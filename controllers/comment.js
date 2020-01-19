@@ -1,5 +1,5 @@
 const Comment = require("../models/Comment");
-const sendNotificationViaMailGun = require("../email/mailgun");
+// const sendNotificationViaMailGun = require("../email/mailgun");
 
 exports.findAll = (req, res) => {
   Comment.find()
@@ -32,7 +32,7 @@ exports.findById = (req, res) => {
 exports.create = (req, res) => {
   Comment.create(req.body)
     .then(data => {
-      sendNotificationViaMailGun(req);
+      // sendNotificationViaMailGun(req);
       res.json(data);
     })
     .catch(err => {
