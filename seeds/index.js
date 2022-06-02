@@ -9,3 +9,14 @@ mongoose.connection.on("error", console.error.bind(console, "Noob database conne
 mongoose.connection.once("open", () => {
   console.log("Connected to MongDB database");
 });
+
+const seedDBUsers = () => {
+  users.forEach((user) => {
+    const newUser = new User(user);
+    newUser.save().catch((err) => {
+      console.log("Error ", err);
+    });
+  });
+};
+
+seedDBUsers();
