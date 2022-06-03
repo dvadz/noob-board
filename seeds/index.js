@@ -1,7 +1,7 @@
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
-const User = require("../models/User");
-const { users } = require("./users");
+const db = require("../models");
+const { users } = require("./users"); //array of dummy users
 const mongoose = require("mongoose");
 
 mongoose.connect(process.env.MONGODB_URI);
@@ -12,10 +12,7 @@ mongoose.connection.once("open", () => {
 
 const seedDBUsers = () => {
   users.forEach((user) => {
-    const newUser = new User(user);
-    newUser.save().catch((err) => {
-      console.log("Error ", err);
-    });
+    db.User.create(user);
   });
 };
 
