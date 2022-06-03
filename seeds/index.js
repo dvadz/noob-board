@@ -11,8 +11,9 @@ mongoose.connection.once("open", () => {
 });
 
 const seedDBUsers = () => {
-  users.forEach((user) => {
-    db.User.create(user);
+  users.forEach(async (user) => {
+    const newUser = await db.User.create(user.user);
+    console.log(newUser);
   });
 };
 
