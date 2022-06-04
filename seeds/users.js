@@ -17,6 +17,9 @@ const users = [
       firstName: "John",
       lastName: "John",
     },
+    posts: [
+      { title: "Http error 304", body: "I'm getting an error HTTP 304. What does it mean and how do I fix it? " },
+    ],
   },
   {
     user: {
@@ -26,6 +29,7 @@ const users = [
       firstName: "Mary",
       lastName: "Mary",
     },
+    posts: [{ title: "Javacript online courses", body: "What javacript course do you recommend on Udemy?" }],
   },
 ];
 
