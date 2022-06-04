@@ -1,8 +1,9 @@
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
-const db = require("../models");
 const { users } = require("./users"); //array of dummy users
 const mongoose = require("mongoose");
+const User = require("../models/User");
+const Post = require("../models/Post");
 
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on("error", console.error.bind(console, "Noob database connection error during seeding"));
@@ -12,8 +13,9 @@ mongoose.connection.once("open", () => {
 
 const seedDBUsers = () => {
   users.forEach(async (user) => {
-    const newUser = await db.User.create(user.user);
-    console.log(newUser);
+    const newUser = new User({ ...user.user });
+    newUser.password = newUser.hashPassword(newUser.password);
+    const result = await newUser.save();
   });
 };
 
