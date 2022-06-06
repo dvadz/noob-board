@@ -16,6 +16,11 @@ const seedDBUsers = () => {
     const newUser = new User({ ...user.user });
     newUser.password = newUser.hashPassword(newUser.password);
     const result = await newUser.save();
+    const posts = user.posts;
+    posts.forEach(async (post) => {
+      post.author = newUser._id;
+      Post.create(post);
+    });
   });
 };
 
