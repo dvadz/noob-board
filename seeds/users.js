@@ -7,7 +7,11 @@ const users = [
       firstName: "Daniel",
       lastName: "Daniel",
     },
-    posts: [{ title: "Welcome", body: "Hello, Welcome to Noob Board" }],
+    posts: [
+      { title: "Welcome", body: "Hello, Welcome to Noob Board" },
+      { title: "Javascript vs Node", body: "What is the difference between javascript and node?" },
+      { title: "Senior developer", body: "How long does it take to become a senior developer?" },
+    ],
   },
   {
     user: {
@@ -19,6 +23,7 @@ const users = [
     },
     posts: [
       { title: "Http error 304", body: "I'm getting an error HTTP 304. What does it mean and how do I fix it? " },
+      { title: "Python", body: "Do I need to learn python? after javacript?" },
     ],
   },
   {
